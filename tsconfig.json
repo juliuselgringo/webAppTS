@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "outDir": "dist", // fichier de sortie de compilation
+        "target":"es2021", // spécifier le langage en sortie du compilateur
+        "noEmitOnError": true, // ne pas compiler en cas d'erreur
+        "strict": true,
+        "declaration": true,
+        "moduleResolution": "node"
+    },
+    "files":[
+        "src/app.ts", // fichiers à compiler
+    ],
+    "include": [
+        "src/types/**/*"
+    ]
+}
+
+// Doc tsconfig
+// https://www.typescriptlang.org/tsconfig/
