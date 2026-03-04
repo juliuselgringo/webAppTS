@@ -8,7 +8,12 @@
         "moduleResolution": "node"
     },
     "files":[
-        "src/app.ts", // fichiers à compiler
+        "src/script/app.ts", // fichiers à compiler
+        "src/script/admin.ts",
+        "src/fonction/inscription.ts",
+        "src/fonction/login.ts",
+        "src/fonction/logout.ts",
+        "src/fonction/verifySession.ts"
     ],
     "include": [
         "src/types/**/*"
