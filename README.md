@@ -1,14 +1,65 @@
-<!-- INFORMATION SUR LE COURS -->
-     <div>
-        <p>npm init -y // initialisation du projet création de package.json</p>
-        <p>npm install typescript --save-dev  // installation typescript dans le projet</p>
-        <p>créer un dossier src et y mettre le fichier app.ts</p>
-        <p>npx tsc src/app.ts --outDir dist // voir commande tsc CLI https://www.typescriptlang.org/docs/handbook/compiler-options.html //création de /dist et d'un fichier app.js</p>
-        <p>créer un fichier tsconfig.json afin de ne plus avoir que <br>
-            npx tsc // pour compiler ou<br>
-            npx tsc --watch // pour auto compiler à chaque changement
-        </p>
+# Web App TypeScript
 
+Application web frontend avec authentification et gestion d'utilisateurs.
 
+## Architecture
 
-     </div>
+```
+src/
+├── fonction/          # Fonctions métier
+│   ├── deleteUser.ts
+│   ├── inscription.ts
+│   ├── login.ts
+│   ├── logout.ts
+│   └── verifySession.ts
+├── script/            # Scripts frontend
+│   ├── admin.ts
+│   └── app.ts
+view/                  # Pages HTML
+├── admin.html
+└── dashboard.html
+index.html             # Page d'accueil
+dist/                  # Fichiers compilés (généré)
+```
+
+## Installation & Configuration
+
+### Initialisation du projet
+
+```bash
+npm init -y                                    # Création de package.json
+npm install typescript --save-dev              # Installation TypeScript
+npm install express                            # Installation Express
+```
+
+### Structure TypeScript
+
+Création du fichier `tsconfig.json` pour centraliser la configuration de compilation :
+
+```bash
+npx tsc --init                                 # Génère tsconfig.json
+npx tsc                                        # Compile une fois
+npx tsc --watch                                # Compilation automatique à chaque changement
+```
+
+## Démarrage local
+
+```bash
+npm run compile                                # Compiler les fichiers TypeScript
+npm start                                      # Lancer le serveur Express (port 3001)
+```
+
+Accédez à l'application : `http://localhost:3001`
+
+## Docker
+
+Construire et lancer l'application dans un conteneur :
+
+```bash
+docker build -t webapp_ts .                    # Création de l'image
+docker run -d -p 3001:3001 --name webapp_ts_container webapp_ts
+```
+
+## Notes
+
+> Pour plus d'informations sur la compilation TypeScript, consultez la [documentation officielle](https://www.typescriptlang.org/docs/handbook/compiler-options.html)

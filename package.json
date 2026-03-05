@@ -1,15 +1,21 @@
 {
   "name": "typescript",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "npx tsc --watch"
+    "compile": "npx tsc --watch",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
+  "dependencies": {
+    "express": "^4.18.2",
+    "path": "^0.12.7"
+  },
   "devDependencies": {
     "@types/dompurify": "^3.0.5",
     "typescript": "^5.9.3"
